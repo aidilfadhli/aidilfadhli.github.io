@@ -36,6 +36,3 @@ document.addEventListener('keydown', (e) => {
     e.stopImmediatePropagation();
   }
 });
-
-// Disable SS Android
-getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
