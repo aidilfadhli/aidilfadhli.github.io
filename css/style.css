@@ -44,3 +44,14 @@ body {
 img {
   pointer-events: none;
 }
+
+/* (C) NO SELECT + HIGHLIGHT COLOR */
+* {
+  user-select: none;
+}
+*::selection {
+  background: none;
+}
+*::-moz-selection {
+  background: none;
+}
