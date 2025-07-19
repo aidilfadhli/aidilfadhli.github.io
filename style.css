@@ -1,34 +1,99 @@
+/* ======================================= */
+/* --- DEFINISI TEMA WARNA --- */
+/* ======================================= */
+:root,
+body[data-theme='default'] {
+  --bg-color: #fffbf5;
+  --card-bg-color: #f7efe5;
+  --primary-accent: #c38154;
+  --secondary-accent: #a06031;
+  --text-color: #4c4c4c;
+  --subtle-text-color: #888;
+  --polaroid-bg: white;
+  --polaroid-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme='pink'] {
+  --bg-color: #ffeaea;
+  --card-bg-color: #f5cbcb;
+  --primary-accent: #e17e8b;
+  --secondary-accent: #c76572;
+  --text-color: #5e373d;
+  --subtle-text-color: #a37c82;
+  --polaroid-bg: #fff0f2;
+  --polaroid-shadow: rgba(117, 65, 73, 0.1);
+}
+
+body[data-theme='dark'] {
+  --bg-color: #1b3c53;
+  --card-bg-color: #456882;
+  --primary-accent: #a6c0d1;
+  --secondary-accent: #e5e5e5;
+  --text-color: #e5e5e5;
+  --subtle-text-color: #a6c0d1;
+  --polaroid-bg: #2a4f6a;
+  --polaroid-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================= */
+/* --- STYLE TOMBOL THEME SWITCHER --- */
+/* ======================================= */
+#theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease, background-color 0.5s ease;
+}
+
+#theme-switcher:hover {
+  transform: scale(1.1);
+}
+
 /* ==== STYLE UNTUK FORM PASSWORD ==== */
 #password-gate {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #fffbf5;
-  padding: 20px;
-  box-sizing: border-box;
+  background-color: var(--bg-color);
+  transition: background-color 0.5s ease;
 }
 
 .form-container {
   text-align: center;
   padding: 40px;
-  background-color: white;
+  background-color: var(--polaroid-bg);
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px var(--polaroid-shadow);
   width: 90%;
   max-width: 400px;
+  transition: background-color 0.5s ease;
 }
 
 .form-container h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  color: #c38154;
+  color: var(--primary-accent);
   margin-top: 0;
+  transition: color 0.5s ease;
 }
 
 .form-container p {
-  color: #888;
+  color: var(--subtle-text-color);
   margin-bottom: 25px;
+  transition: color 0.5s ease;
 }
 
 #password-input {
@@ -38,7 +103,7 @@
   border-radius: 8px;
   font-size: 1rem;
   margin-bottom: 20px;
-  box-sizing: border-box; /* Penting! */
+  box-sizing: border-box;
 }
 
 #submit-button {
@@ -46,20 +111,20 @@
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: #c38154;
-  color: white;
+  background-color: var(--primary-accent);
+  color: var(--bg-color);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
 }
 
 #submit-button:hover {
-  background-color: #a06031;
+  background-color: var(--secondary-accent);
 }
 
 .error-message {
-  color: #d8000c !important; /* Warna merah untuk pesan error */
+  color: #d8000c !important;
   font-size: 0.9rem;
   min-height: 20px;
 }
@@ -69,12 +134,12 @@
 /* Pengaturan Dasar dan Font */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #fffbf5;
-  color: #4c4c4c;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
-  /* Hapus padding dari body agar form bisa full-screen */
   text-align: center;
-  overflow-x: hidden; /* Mencegah scroll horizontal karena animasi */
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Style untuk video player di dalam kartu */
@@ -86,119 +151,44 @@ body {
 /* Bagian Header/Judul */
 .hero {
   padding: 60px 20px;
-  position: relative; /* Diperlukan untuk partikel */
-  overflow: hidden; /* Agar partikel tidak keluar header */
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-family: 'Dancing Script', cursive;
   font-size: 4.5rem;
-  color: #c38154;
+  color: var(--primary-accent);
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+  transition: color 0.5s ease;
 }
 
 .hero p {
   font-size: 1.1rem;
-  color: #888;
+  color: var(--subtle-text-color);
   position: relative;
   z-index: 2;
-}
-
-/* EFEK PARTIKEL/KONFETI */
-.particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ffd1a8;
-  border-radius: 50%;
-  opacity: 0;
-  animation: fly 10s infinite ease-in;
-}
-
-.particle:nth-child(1) {
-  top: 10%;
-  left: 15%;
-  animation-delay: 0s;
-}
-.particle:nth-child(2) {
-  top: 20%;
-  left: 80%;
-  animation-delay: -2s;
-  background-color: #ffb3a8;
-}
-.particle:nth-child(3) {
-  top: 85%;
-  left: 90%;
-  animation-delay: -4s;
-}
-.particle:nth-child(4) {
-  top: 60%;
-  left: 10%;
-  animation-delay: -1s;
-  background-color: #ffb3a8;
-}
-.particle:nth-child(5) {
-  top: 40%;
-  left: 50%;
-  animation-delay: -5s;
-}
-.particle:nth-child(6) {
-  top: 90%;
-  left: 20%;
-  animation-delay: -3s;
-  background-color: #ffb3a8;
-}
-.particle:nth-child(7) {
-  top: 5%;
-  left: 50%;
-  animation-delay: -7s;
-}
-.particle:nth-child(8) {
-  top: 70%;
-  left: 65%;
-  animation-delay: -1.5s;
-  background-color: #ffb3a8;
-}
-
-@keyframes fly {
-  0% {
-    transform: translateY(0) scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-200px) scale(1);
-    opacity: 0;
-  }
+  transition: color 0.5s ease;
 }
 
 /* SECTION COUNTER */
 .counter-section {
-  background-color: #f7efe5;
+  background-color: var(--card-bg-color);
   padding: 40px 20px;
   border-radius: 12px;
   max-width: 600px;
   margin: 40px auto;
+  transition: background-color 0.5s ease;
 }
 
 .counter-section h2 {
   margin-top: 0;
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  color: #c38154;
+  color: var(--primary-accent);
+  transition: color 0.5s ease;
 }
 
 .day-counter {
@@ -208,8 +198,9 @@ body {
 
 .day-counter span {
   font-size: 4rem;
-  color: #c38154;
+  color: var(--primary-accent);
   font-weight: bold;
+  transition: color 0.5s ease;
 }
 
 /* SECTION TIMELINE */
@@ -223,8 +214,9 @@ body {
 .gallery-title {
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
-  color: #c38154;
+  color: var(--primary-accent);
   margin-bottom: 40px;
+  transition: color 0.5s ease;
 }
 
 .timeline-container {
@@ -232,6 +224,20 @@ body {
   width: 100%;
 }
 
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -12px;
+  background-color: var(--polaroid-bg);
+  border: 4px solid var(--primary-accent);
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+/* ... sisa kode timeline yang tidak berhubungan dengan warna tetap sama ... */
 .timeline-container::after {
   content: '';
   position: absolute;
@@ -242,26 +248,11 @@ body {
   left: 50%;
   margin-left: -2px;
 }
-
 .timeline-item {
   padding: 10px 40px;
   position: relative;
   width: 50%;
 }
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: -12px;
-  background-color: white;
-  border: 4px solid #c38154;
-  top: 25px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
 .timeline-item:nth-child(odd) {
   left: 0;
   text-align: right;
@@ -276,10 +267,12 @@ body {
 
 .timeline-content {
   padding: 20px 30px;
-  background-color: white;
+  background-color: var(--polaroid-bg);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px var(--polaroid-shadow);
+  transition: background-color 0.5s ease;
 }
+
 .timeline-content h3 {
   margin-top: 0;
 }
@@ -289,36 +282,37 @@ body {
   margin: 5px 0;
 }
 .timeline-content small {
-  color: #777;
+  color: var(--subtle-text-color);
   font-style: italic;
+  transition: color 0.5s ease;
 }
 
 /* GALERI FOTO & POLAROID CARD */
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .polaroid-card {
-  background-color: white;
+  background-color: var(--polaroid-bg);
   padding: 15px 15px 20px 15px;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px var(--polaroid-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
   cursor: pointer;
   text-align: center;
 }
 
 .polaroid-card:hover {
   transform: scale(1.05) rotate(0deg) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px var(--polaroid-shadow);
   z-index: 10;
 }
-
+/* ... sisa kode polaroid card yg tidak berhubungan dengan warna tetap sama ... */
 .polaroid-card:nth-child(3n) {
   transform: rotate(2deg);
 }
@@ -334,18 +328,30 @@ body {
   height: auto;
   display: block;
 }
+
 .polaroid-card .caption {
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   margin-top: 15px;
   margin-bottom: 0;
-  color: #555;
+  color: var(--text-color);
+  transition: color 0.5s ease;
+}
+
+.polaroid-card .caption-alt {
+  font-family: 'Intel One Mono', monospace;
+  font-size: 1rem;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: var(--text-color);
+  transition: color 0.5s ease;
 }
 
 /* FOOTER */
 footer {
   margin-top: 50px;
-  color: #999;
+  color: var(--subtle-text-color);
+  transition: color 0.5s ease;
 }
 
 /* MODAL/LIGHTBOX */
@@ -385,7 +391,7 @@ footer {
 }
 /* Style untuk pesan penutup */
 .closing-message {
-  margin-top: 80px; /* Memberi jarak dari galeri di atasnya */
+  margin-top: 80px;
   margin-bottom: 40px;
   padding: 0 20px;
 }
@@ -393,8 +399,29 @@ footer {
 .closing-message p {
   font-size: 1.3rem;
   font-style: italic;
-  color: #777;
-  max-width: 600px; /* Agar tulisan tidak terlalu lebar di layar besar */
+  color: var(--subtle-text-color);
+  max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6; /* Jarak antar baris jika teksnya panjang */
+  line-height: 1.6;
+  transition: color 0.5s ease;
+}
+
+/* ========================================== */
+/* --- PENGATURAN RESPONSIVE UNTUK GALERI --- */
+/* ========================================== */
+
+/* Untuk layar Tablet (lebar 600px ke atas), jadi 3 kolom */
+@media (min-width: 600px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Jarak normal untuk tablet */
+  }
+}
+
+/* Untuk layar Desktop (lebar 900px ke atas), jadi 4 kolom */
+@media (min-width: 900px) {
+  .gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Jarak normal untuk desktop */
+  }
 }

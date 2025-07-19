@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // --- BAGIAN 1: PENGATURAN AWAL & EVENT LISTENER ---
+  // --- BAGIAN BARU: LOGIKA THEME SWITCHER ---
+  const themeSwitcher = document.getElementById('theme-switcher');
+  const themes = ['default', 'pink', 'dark'];
+  let currentThemeIndex = 0;
+
+  // Cek tema yang tersimpan di localStorage saat halaman dimuat
+  const savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme) {
+    document.body.setAttribute('data-theme', savedTheme);
+    currentThemeIndex = themes.indexOf(savedTheme);
+  }
+
+  // Tambahkan event listener untuk tombol
+  themeSwitcher.addEventListener('click', () => {
+    // Pindah ke tema berikutnya, kembali ke 0 jika sudah di akhir
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    const nextTheme = themes[currentThemeIndex];
+
+    // Terapkan tema ke body
+    document.body.setAttribute('data-theme', nextTheme);
+
+    // Simpan pilihan tema
+    localStorage.setItem('selectedTheme', nextTheme);
+  });
+
+  // --- KODE LAMA DIMULAI DARI SINI ---
   const passwordGate = document.getElementById('password-gate');
   const websiteContent = document.getElementById('website-content');
   const passwordInput = document.getElementById('password-input');
@@ -13,21 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // --- BAGIAN 2: FUNGSI UNTUK MENGECEK PASSWORD ---
   function checkPassword() {
     const correctPassword = 'sayangkamu';
     const enteredPassword = passwordInput.value;
 
     if (enteredPassword === correctPassword) {
-      // Jika password benar:
       passwordGate.style.display = 'none';
       websiteContent.style.display = 'block';
-
-      // ===============================================
-      // PERINTAH BARU: PUTAR MUSIK LATAR
       document.getElementById('background-music').play();
-      // ===============================================
-
       initializeWebsiteFunctions();
     } else {
       errorMessage.textContent = 'Kata sandi salah, coba lagi ya!';
@@ -35,22 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // --- BAGIAN 3: SEMUA FUNGSI WEBSITE (DIJALANKAN SETELAH LOGIN) ---
   function initializeWebsiteFunctions() {
-    // Pengaman: Menonaktifkan Klik Kanan
     document.addEventListener('contextmenu', (event) => event.preventDefault());
-
-    // Inisialisasi Animasi AOS
     AOS.init({ duration: 800, once: true });
-
-    // Fungsi Penghitung Hari
     calculateDays();
-
-    // Logika Lightbox HANYA UNTUK FOTO
     setupPhotoLightbox();
-
-    // Logika untuk Video Player Kustom
-    setupCustomVideoPlayer();
   }
 
   function calculateDays() {
@@ -81,25 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener('click', closeModal);
     modal.addEventListener('click', (event) => {
       if (event.target === modal) closeModal();
-    });
-  }
-
-  function setupCustomVideoPlayer() {
-    const videoWrappers = document.querySelectorAll('.video-wrapper');
-    videoWrappers.forEach((wrapper) => {
-      const video = wrapper.querySelector('video');
-      wrapper.addEventListener('click', () => {
-        if (video.paused) {
-          video.play();
-          wrapper.classList.add('playing');
-        } else {
-          video.pause();
-          wrapper.classList.remove('playing');
-        }
-      });
-      video.addEventListener('ended', () => {
-        wrapper.classList.remove('playing');
-      });
     });
   }
 });
