@@ -406,9 +406,7 @@ footer {
   transition: color 0.5s ease;
 }
 
-/* ========================================== */
 /* --- PENGATURAN RESPONSIVE UNTUK GALERI --- */
-/* ========================================== */
 
 /* Untuk layar Tablet (lebar 600px ke atas), jadi 3 kolom */
 @media (min-width: 600px) {
@@ -424,4 +422,19 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px; /* Jarak normal untuk desktop */
   }
+}
+
+/* --- STYLE UNTUK MEMBUAT 2 FOTO TERAKHIR DI TENGAH --- */
+.last-row-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Agar rapi di mobile */
+  gap: 30px; /* Jarak antar 2 foto terakhir */
+  margin-top: -15px; /* Sesuaikan jarak dari galeri di atasnya */
+  padding: 20px;
+}
+
+/* Beri ukuran pada kartu yang ada di dalam pembungkus ini */
+.last-row-wrapper .polaroid-card {
+  width: 280px;
 }

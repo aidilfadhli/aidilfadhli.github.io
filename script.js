@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('background-music').play();
       initializeWebsiteFunctions();
     } else {
-      errorMessage.textContent = 'Kata sandi salah, coba lagi ya!';
+      errorMessage.textContent = 'Passwordnya salah sayang, coba tanya aidil gih 😊';
       passwordInput.value = '';
     }
   }
