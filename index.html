@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ssssttt</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <audio id="background-music" loop>
+      <source src="assets/Youll Be In My Heart - Phil Collins.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="password-gate">
+      <div class="form-container">
+        <h2>Masukkan Kata Sandi</h2>
+        <p>Web ini cuma buat Tali 😁</p>
+        <input type="password" id="password-input" placeholder="Masukkan kata sandi..." />
+        <button id="submit-button">Masuk</button>
+        <p id="error-message" class="error-message"></p>
+      </div>
+    </div>
+
+    <div id="website-content" style="display: none">
+      <header class="hero">
+        <div class="particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <h1 data-aos="fade-down">8 Month Falling In Love With U</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Teruntuk kamu.. Talitha</p>
+      </header>
+
+      <main>
+        <section class="counter-section" data-aos="zoom-in">
+          <h2>Hari yang udah kita lewatin bareng 💗</h2>
+          <div class="day-counter"><span id="days">0</span> Hari</div>
+        </section>
+
+        <section class="timeline-section">
+          <h2 data-aos="fade-up">Perjalanan Kita So Far..</h2>
+          <div class="timeline-container">
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content">
+                <h3>Awal Mula Confess</h3>
+                <p>- Januari 2021</p>
+                <small>Hari di mana semuanya dimulai. aku pertama kali nyatain ke kamu wkkwkw.</small>
+              </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+              <div class="timeline-content">
+                <h3>Jadian!</h3>
+                <p>18 November 2024</p>
+                <small>siapa sangka kan</small>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content">
+                <h3>First Date</h3>
+                <p>29 November 2024</p>
+                <small>Kita pas itu ke Ciwalk-Bandung</small>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content">
+                <h3>Ulang Tahun Kamu</h3>
+                <p>13 Desember 2025</p>
+                <small>First time aku bisa ngucapin langsung ke kamu, dlu masih di chat doang HAHAHA</small>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content">
+                <h3>Ulang Tahun Aku</h3>
+                <p>20 Desember 2025</p>
+                <small>loh.. beda seminggu kita 😁</small>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content">
+                <h3>First Date (lagi tapi pas udah pulang)</h3>
+                <p>13 Januari 2025</p>
+                <small>Ini seneng bgt ketemu di Aeon Tanjung Barat</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <h2 data-aos="fade-up" class="gallery-title">Album Kenangan Kita</h2>
+        <div class="gallery-container">
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto1.jpg" alt="Deskripsi foto 1" />
+            <p class="caption">Pertama kali kita ketemu</p>
+            <p class="caption">First Date:</p>
+            <p class="caption">Ciwalk-Bandung, 29 November 2024</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/foto2.jpg" alt="Deskripsi foto 2" />
+            <p class="caption">🍿 Nonton Film:</p>
+            <p class="caption">"Bila Esok Ibu Tiada"</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/foto3.jpg" alt="Deskripsi foto 3" />
+            <p class="caption">📍 Braga, Bandung</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <video width="100%" controls>
+              <source src="assets/video1.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung pemutar video.
+            </video>
+            <p class="caption">Makan Gokana 🍜</p>
+          </div>
+
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto5.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">📍 AEON Tanjung Barat</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto6.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">masih gondrong wkwkw</p>
+            <p class="caption">kamu chubby bgt gemes 😭</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto7.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">mam marugame 🍜</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <video width="100%" controls>
+              <source src="assets/video2.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung pemutar video.
+            </video>
+            <p class="caption">awokwokwowk</p>
+          </div>
+
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto8.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">📍 Kota Kasablanka</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto9.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">ga ekspek ketemu fedi nuril gasii..</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto10.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">mam kimukatsu.. 🍜</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <video width="100%" controls>
+              <source src="assets/video3.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung pemutar video.
+            </video>
+            <p class="caption">ini kita di ramen ya!</p>
+          </div>
+
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto11.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">📍 Grand Indonesia</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto12.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">pap dlu..</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto13.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">nonton film</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <video width="100%" controls>
+              <source src="assets/video4.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung pemutar video.
+            </video>
+            <p class="caption">first time aku ke GI ama kamu..</p>
+          </div>
+
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto14.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">📍 Margocity</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto15.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">lucu bgtt ♥️</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto16.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">HAHAHA di Lift</p>
+          </div>
+          <div class="polaroid-card" data-aos="fade-up">
+            <img src="assets/foto17.jpg" alt="Deskripsi foto 4" />
+            <p class="caption">ini kita abis dri margo gtau mau kemana akhirnya ke FM</p>
+          </div>
+        </div>
+      </main>
+
+      <section class="closing-message" data-aos="fade-up">
+        <p>"Dan masih banyak lagi perjalanan kita setelah itu.. aku harap kita terus bareng n selalu memaafkan"</p>
+        <p>"Bandung dan Malang emg jauh ta, tapi liat kita bisa buktiin klo hati kita selalu deket"</p>
+        <p>"I hope one day we will bring us to the same city, forever"</p>
+      </section>
+
+      <footer>
+        <p>Bandung ❤️ Malang, cocok ya kek kita gtu.. mereka diciptain oleh orang yang sama kan taa..</p>
+      </footer>
+
+      <div id="lightbox-modal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="lightbox-image" />
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
